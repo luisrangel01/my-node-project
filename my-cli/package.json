@@ -1,6 +1,6 @@
 {
   "name": "my-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "bin": "./bin/cmd.js",
   "type": "module",
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^11.0.0",
     "got": "^13.0.0"
   }
 }
