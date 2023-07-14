@@ -1,2 +1,4 @@
 /node_modules
 ./mock-sr/node_modules
+./my-cli/node_modules
+my-cli/node_modules

@@ -20,7 +20,7 @@ const populateProducts = async (category, method = "GET", payload) => {
   for (const product of data) {
     const item = document.createElement("product-item");
     item.dataset.id = product.id;
-    for (const key of ["name", "rrp", "info"]) {
+    for (const key of ["name", "rrp", "info", "id"]) {
       const span = document.createElement("span");
       span.slot = key;
       span.textContent = product[key];
@@ -49,7 +49,7 @@ const realtimeOrders = (category) => {
   // Listen for messages
   socket.addEventListener("message", ({ data }) => {
     try {
-      console.log(new Date())
+      console.log(new Date());
       console.log(data);
       const { id, total } = JSON.parse(data);
       const item = document.querySelector(`[data-id="${id}"]`);
