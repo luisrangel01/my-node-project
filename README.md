@@ -1,6 +1,8 @@
 # my-node-project
 
 ``` bash
+my-cli update A1 100
+
 my-cli add electronics A3 Laptop 599 "Best mid-priced laptop money can buy"
 
 my-cli list electronics
