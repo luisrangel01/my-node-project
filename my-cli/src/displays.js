@@ -30,7 +30,12 @@ export const displayInfo = (msg) => bgYellow.bold(`ℹ️ ${msg ?? "Info:"}`);
 export const displaySuccess = (msg = "") =>
   bgCyan.inverse.bold(`✅ Success! ${msg}`);
 
-export const displayCategory = (category) => txGreen.bold.underline(category);
+export const displayCategory = (category) => {
+  if (category) {
+    // console.log(`category:`,category);
+    return txGreen.bold.underline(category.name);
+  }
+};
 
 export const displayAmount = (amount) => txYellow.bold.underline(`$${amount}`);
 

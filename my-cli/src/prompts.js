@@ -1,5 +1,6 @@
 import Enquirer from "enquirer";
-import { categories } from "./utils.js";
+import { log, error, displayInfo, displayText } from "./displays.js";
+import { categories, listCategoryItems, listCategories, update, add } from "./utils.js";
 // Import the Enquirer prompt types
 const { prompt } = Enquirer;
 
@@ -80,6 +81,7 @@ export const promptCommand = async () => {
 };
 
 export const interactiveApp = async (cmd) => {
+  
   log(displayText(`Back office for My App`));
   log(displayInfo(`Interactive Mode`));
   try {

@@ -76,7 +76,7 @@ export async function add(...args) {
         id,
         name,
         rrp: +amount,
-        info: info.join(" "),
+        info: `${info} `,
       },
     });
     // Log the result to the console
@@ -96,6 +96,7 @@ export async function add(...args) {
 
 // List the categories
 export function listCategories() {
+  console.clear();
   log(displayTimestamp());
   log(displayInfo("Listing Categories"));
   try {
@@ -111,6 +112,7 @@ export function listCategories() {
 
 // List the IDs for the given category
 export async function listCategoryItems(category) {
+  console.clear();
   log(displayTimestamp());
   log(`${displayInfo(`List IDs`)}`);
 
@@ -121,9 +123,10 @@ export async function listCategoryItems(category) {
     log(`${displaySuccess("IDs received from API:")}`);
     for (const item of result) {
       log(`
-${displayKey("ID:")}\t${displayID(item.id)}
-${displayKey("Name:")}\t${displayName(item.name)}
-${displayKey("RRP:")}\t${displayRRP(item.rrp)}
+${displayKey("ID          :")}\t${displayID(item.id)}
+${displayKey("Name        :")}\t${displayName(item.name)}
+${displayKey("RRP         :")}\t${displayRRP(item.rrp)}
+${displayKey("Category    :")}\t${displayRRP(category)}
 ${displayKey("Product Info:")}\n\t${displayText(item.info)}
 `);
     }
